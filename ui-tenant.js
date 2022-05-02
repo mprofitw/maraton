@@ -10,8 +10,8 @@ const numberOfTen = document.querySelector('#numberoftenants')
 const btnAddTenant = document.querySelector('.save-tenant')
 const table = document.querySelector('table')
 
-
-    const btnDelete = [...document.querySelectorAll('[data-id]')]
+// const btnDelete = [...document.querySelectorAll('[data-id]')]
+const btnDelete = [...document.querySelectorAll('.btn-delete-tenant')]
 const searchName = document.querySelector('.search-input')
 
 const form = document.querySelector('form')
@@ -22,13 +22,19 @@ const btnCancelAddTenant = document.querySelector('.btn-cancel')
 
 
 const removeTenant = (event) => {
-    const id = Number(event.target.parentNode.dataset.id)
-    console.log("Numer id to "+ id)
+
+    const id = Number(event.target.parentNode.parentNode.dataset.id)
+    console.log("Numer id to " + id)
     console.log(event.target.parentNode)
-    tenants.removeTenant(id)
+    console.log("e.currentTarget: ", event.currentTarget);
+
     const row = tbody.insertRow()
     let cell = row.insertCell()
-    row.remove(id)
+    if (event.target.classList.contains("btn-delete-tenant")) {
+        tenants.removeTenant(id)
+        row.remove(id)
+    }
+
 
     showEmptyHeader()
     console.log(tenants)
@@ -65,19 +71,8 @@ const createTenantTable = () => {
         cell = row.insertCell()
         cell.innerHTML = ' <button class="btn-edit-tenant" >Edit</button><button class="btn-delete-tenant"  >Delete</button>'
 
-        // for (const btnAllElement of btnDelete) {
-        //     btnAllElement.addEventListener('click', (e)=>{
-        //         const id = Number(e.target.parentNode.parentNode.dataset.id)
-        //         console.log(e.target.parentNode.parentNode)
-        //         console.log('usun')
-        //         console.log(id)
-        //         row.remove(id)
-        //         tenants.removeTenant(id)
-        //         console.log(tenants)
-        //     })}
 
-
-          row.addEventListener('click', removeTenant);
+        tbody.addEventListener('click', removeTenant);
 
 
     }
@@ -107,15 +102,6 @@ form.addEventListener('submit', (e) => {
     saveTenant()
 
 })
-
-const deleteTenant = (index) => {
-
-    tbody.deleteRow(index)
-    tenants.removeTenant(index)
-    console.log(tenants)
-}
-
-
 
 /*    Wyszukiwanie   */
 
@@ -153,7 +139,7 @@ const findName = () => {
             cell.innerHTML = ' <button class="btn-edit-tenant" >Edit</button><button class="btn-delete-tenant"  >Delete</button>'
             row.addEventListener('click', (event) => {
                 const id = Number(event.target.parentNode.dataset.id)
-                console.log("Numer id to "+ id)
+                console.log("Numer id to " + id)
                 console.log(event.target.parentNode)
                 tenants.removeTenant(id)
                 row.remove(id)
