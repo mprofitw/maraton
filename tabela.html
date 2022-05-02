@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table cellpadding="2" cellspacing="2" border="0" bgcolor="#dfdfdf" width="40%" align="center">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th width="20%">Age</th>
+    <th width="12%">Status</th>
+  </tr>
+  </thead>
+  <tbody id="tableData"></tbody>
+</table>
+<script type="text/javascript">
+  var mainObj = [
+    {
+      name: "Kapil",
+      age:  21,
+      status: "Active"
+    },
+    {
+      name: "John",
+      age:  28,
+      status: "Inactive"
+    },
+    {
+      name: "Deos",
+      age:  18,
+      status: "Active"
+    },
+      {
+          name: "Marek",
+          age:  101 ,
+          status: "Active"
+      }
+  ];
+  var k = '<tbody>'
+  for(i = 0;i < mainObj.length; i++){
+    k+= '<tr>';
+    k+= '<td>' + mainObj[i].name + '</td>';
+    k+= '<td>' + mainObj[i].age + '</td>';
+    k+= '<td>' + mainObj[i].status + '</td>';
+    k+= '</tr>';
+  }
+  k+='</tbody>';
+  document.getElementById('tableData').innerHTML = k;
+</script>
+
+
+
+</body>
+</html>

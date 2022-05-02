@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: rgb(222, 222, 222);
+    font-size: 16px;
+}
+
+.main-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    height: 100%;
+
+}
+
+li a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 50px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: white;
+
+}
+
+.li-box {
+    display: flex;
+    align-items: center;
+}
+
+.li-box:hover {
+    background-color: rgb(22, 120, 196);
+}
+
+
+/* Styl dla properties.html*/
+.properties-list, .tenants-list h1, p {
+    text-align: center;
+}
+
+.properties-list, .tenants-list {
+    margin: 80px;
+}
+
+.btn-add-property, .btn-add-tenant {
+    margin: 20px 11vw;
+    padding: 10px 20px;
+    background-color: rgb(22, 120, 196);
+    border: none;
+    color: white;
+
+
+}
+
+.btn-add-property span, .btn-add-tenant span {
+    padding-right: 10px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.btn-add-property:hover, .btn-add-tenant:hover {
+    background-color: rgb(16, 103, 171);
+    cursor: pointer;
+}
+
+.tenants-table-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.tenants-table thead {
+    background-color: rgb(176, 176, 176);
+}
+
+.tenants-table, td, th {
+    border-collapse: collapse;
+    width: 70vw;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.tenants-table tr:nth-of-type(even) {
+    background-color: rgb(176, 176, 176);
+}
+
+.tenants-table tbody tr:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.btn-edit-tenant, .btn-delete-tenant,.btn-search, .btn {
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 3px 5px;
+}
+
+.btn-edit-tenant,.btn-save-tenant {
+    border: 1px solid rgb(22, 120, 196);
+    color: rgb(22, 120, 196);
+}
+
+.btn-delete-tenant, .btn-cancel {
+    border: 1px solid rgb(246, 23, 22);
+    color: rgb(246, 23, 22)
+}
+
+.btn-edit-tenant:hover,.btn-save-tenant:hover {
+    cursor: pointer;
+    background-color: rgb(22, 120, 196);
+    color: white;
+}
+
+.btn-delete-tenant:hover,.btn-cancel:hover {
+    cursor: pointer;
+    background-color: rgb(246, 23, 22);
+    color: white;
+}
+
+.add-tenant-wrapper {
+    display: flex;
+    justify-content: center;
+
+}
+
+.add-tenant {
+    margin-top: 100px;
+}
+
+.add-tenant-container {
+    border: 1px solid rgb(176, 176, 176);
+    width: 70vw;
+    height: 80vh;
+
+}
+
+.add-tenant-top {
+    height: 40px;
+    background-color: rgb(176, 176, 176);
+    line-height: 40px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+/*.add-tenant-bottom {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+
+/*}*/
+.add-tenant-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+.add-tenant-form div{
+    margin-top: 20px;
+}
+.add-tenant-form input{
+    padding: 7px;
+}
+
+ input {width: 250px}
+ .search-wrapper{
+     display: flex;
+     justify-content: center;
+     margin: 40px;
+ }
+ .search-input{
+     padding: 7px;
+ }
+ .btn-search{
+     border: 1px solid rgb(22, 120, 196);
+     color: rgb(22, 120, 196);
+ }
+.btn-search:hover {
+    cursor: pointer;
+    background-color: rgb(22, 120, 196);
+    color: white;
+}
+.search-info{
+    color: red;
+    margin-top: 15px;
+    font-size: 18px;
+}
+.empty-info{
+    color: red;
+}

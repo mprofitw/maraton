@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7a67cf6307.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Tenants table</title>
+</head>
+<body>
+<header></header>
+<nav>
+    <div class="main-menu">
+        <ul>
+            <div class="li-box">
+                <li><a class="home" href="index.html">home</a></li>
+            </div>
+            <div class="li-box">
+                <li><a class="properties" href="properties.html">Properties</a></li>
+            </div>
+            <div class="li-box">
+                <li><a class="tenants" href="tenants.html">Tenants</a></li>
+            </div>
+            <div class="li-box">
+                <li><a class="tenants" href="#">Expenses</a></li>
+            </div>
+        </ul>
+    </div>
+</nav>
+
+<section class="tenants-list">
+    <h1>List of tenants</h1>
+    <p class="empty-info"></p>
+    <a href="addTenant.html">
+        <button class="btn-add-tenant"><span>+</span> Add new tenant</button>
+    </a>
+    <div class="tenants-table-wrapper">
+        <table class="tenants-table">
+            <thead>
+            <th>ID</th>
+            <th>First name</th>
+            <th>Surname</th>
+            <th>Phone</th>
+            <th>E-mail</th>
+            <th>Number of tenant</th>
+            <th>Status</th>
+            <th>Action</th>
+            </thead>
+            <tbody class="tbody">
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <p class="search-info"></p>
+    <div class="search-wrapper">
+        <input class="search-input" type="text" name="search" id="search">
+        <button class="btn-search">Search...</button>
+    </div>
+</section>
+
+<div class="add-tenant-wrapper">
+    <div class="add-tenant-container">
+        <div class="add-tenant-top">+ Add new tenant</div>
+        <div class="add-tenant-bottom">
+
+            <!--            <form action="tenants.html" >-->
+            <form class="add-tenant-form">
+                <div>
+                    <label for="fName">First name</label>
+                    <input type="text" id="fName" name="fName" placeholder="Input tenant first name">
+                </div>
+                <div>
+                    <label for="surname">Surname</label>
+                    <input type="text" id="surname" name="surname" placeholder="Input tenant surname">
+                </div>
+                <div>
+                    <label for="phone">Phone number</label>
+                    <input type="text" id="phone" name="phone" placeholder="Input tenant phone number">
+                </div>
+                <div>
+                    <label for="surname">Email address</label>
+                    <input type="text" id="email" name="email" placeholder="Input tenant email address">
+                </div>
+                <div>
+                    <label for="numberoftenants">Number of tenants</label>
+                    <input type="number" id="numberoftenants" name="numberoftenants"
+                           placeholder="Input number of tenants">
+                </div>
+                <div >
+                    <input type="radio" id="inactive" name="status" value="inactive" checked>
+                    <label for="inactive">Inactive</label>
+                    <input type="radio" id="active" name="status" value="active">
+                    <label for="active">Active</label>
+                </div>
+                <div>
+                    <button class="btn btn-cancel" >Cancel</button>
+                    <button class="btn btn-save-tenant" type="submit" class="save-tenant">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<!--<script src="main.js"></script>-->
+
+<script src="tenant.js"></script>
+<script src="ui-tenant.js"></script>
+</body>
+</html>

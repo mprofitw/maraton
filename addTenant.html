@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7a67cf6307.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Add new Tenant</title>
+</head>
+<body>
+<header></header>
+<nav>
+    <div class="main-menu">
+        <ul>
+            <div class="li-box">
+                <li><a class="home" href="index.html">home</a></li>
+            </div>
+            <div class="li-box">
+                <li><a class="properties" href="properties.html">Properties</a></li>
+            </div>
+            <div class="li-box">
+                <li><a class="tenants" href="tenants.html">Tenants</a></li>
+            </div>
+            <div class="li-box">
+                <li><a class="tenants" href="#">Expenses</a></li>
+            </div>
+        </ul>
+    </div>
+</nav>
+
+<section class="add-tenant">
+
+    <!--    <h1>Tenants</h1>-->
+    <div class="add-tenant-wrapper">
+        <div class="add-tenant-container">
+            <div class="add-tenant-top">+ Add new tenant</div>
+            <div class="add-tenant-bottom">
+
+                <form action="tenants.html" method="get">
+                <label for="fName">First name</label>
+                <input type="text" id="fName" name="fName" placeholder="Input tenant first name">
+                <label for="surname">Surname</label>
+                <input type="text" id="surname" name="surname" placeholder="Input tenant surname">
+                <label for="phone">Phone number</label>
+                <input type="text" id="phone" name="phone" placeholder="Input tenant phone number">
+                <label for="surname">Email address</label>
+                <input type="text" id="email" name="email" placeholder="Input tenant email address">
+                <label for="numberoftenants">Number of tenants</label>
+                <input type="number" id="numberoftenants" name="numberoftenants" placeholder="Input number of tenants">
+
+                <input type="radio" id="inactive" name="status" value="inactive" checked>
+                <label for="inactive">Inactive</label>
+                <input type="radio" id="active" name="status" value="active" >
+                <label for="active">Active</label>
+
+                    <button>Cancel</button><button type="submit" value="Save!!" class="save-tenant">Save to</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!--<script src="main.js"></script>-->
+<script src="tenant.js"></script>
+<script src="ui-tenant.js"></script>
+</body>
+</html>
