@@ -56,13 +56,13 @@ const editTenant = (event) => {
         const id = Number(event.target.parentNode.parentNode.dataset.id)
         if (event.target.classList.contains('btn-edit-tenant')) {
             console.log('edycja ' + id)
-            fName.value = event.target.parentNode.parentNode.firstChild.textContent
-            const dzieci =  event.target.parentNode.parentNode.childNodes
+            fName.value = event.target.parentNode.parentNode.childNodes.item(1).textContent
+            surname.value = event.target.parentNode.parentNode.childNodes.item(2).textContent
+            phone.value = event.target.parentNode.parentNode.childNodes.item(3).textContent
+            email.value = event.target.parentNode.parentNode.childNodes.item(4).textContent
+            numberOfTen.value = event.target.parentNode.parentNode.childNodes.item(5).textContent
+           
 
-            for (let i = 0; i < dzieci.length; i++)
-            {
-                console.log(dzieci[i].nodeName)
-            }
     }
 }
 
