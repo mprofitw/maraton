@@ -174,6 +174,11 @@ const findName = () => {
             cell.textContent = text.status
             cell = row.insertCell()
             // cell.innerHTML = ' <button class="btn-edit-tenant" >Edit</button><button class="btn-delete-tenant"  >Delete</button>'
+            const editButton = document.createElement("button");
+            editButton.classList.add("btn-edit-tenant")
+            editButton.textContent = 'Edit'
+            editButton.setAttribute("id", text.id);
+            cell.append(editButton)
             const delButton = document.createElement("button");
             delButton.classList.add("btn-delete-tenant")
             delButton.textContent = 'Delete'
