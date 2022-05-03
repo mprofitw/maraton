@@ -85,8 +85,11 @@ li a {
     justify-content: center;
 }
 
-.tenants-table thead {
-    background-color: rgb(176, 176, 176);
+.tenants-table thead th {
+    /*background-color: rgb(176, 176, 176);*/
+   padding: 10px;
+background-color: rgb(28, 148, 239);
+
 }
 
 .tenants-table, td, th {

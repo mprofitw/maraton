@@ -12,6 +12,7 @@ const table = document.querySelector('table')
 
 // const btnDelete = [...document.querySelectorAll('[data-id]')]
 const btnDelete = [...document.querySelectorAll('.btn-delete-tenant')]
+
 const searchName = document.querySelector('.search-input')
 
 const form = document.querySelector('form')
@@ -23,28 +24,49 @@ const btnCancelAddTenant = document.querySelector('.btn-cancel')
 
 const removeTenant = (event) => {
 
-    const id = Number(event.target.parentNode.parentNode.dataset.id)
-    console.log("Numer id to " + id)
-    console.log(event.target.parentNode)
-    console.log("e.currentTarget: ", event.currentTarget);
+    const indexTenant = Number(event.target.parentNode.parentNode.dataset.id)
+
+    // const id = Number(event.target.parentNode.parentNode.dataset.id)
 
     const row = tbody.insertRow()
     let cell = row.insertCell()
-    if (event.target.classList.contains("btn-delete-tenant")) {
-        tenants.removeTenant(id)
-        row.remove(id)
-    }
+    // if (e.target.dataset.button === "delete") {
+    //     toDoList.removeTask(indexTask);
+    //
+    // }
+    if (event.target.classList.contains('btn-delete-tenant')) {
+        tenants.removeTenant(indexTenant)
+        row.remove(indexTenant)
 
+        // if (confirm('Are you sure to delete this tenant?')) {
+        //     tenants.removeTenant(id)
+        //     row.remove(id)
+        // } else {
+        //     createTenantTable()
+        // }
+    }
 
     showEmptyHeader()
     console.log(tenants)
     clearTenantTable()
     createTenantTable()
-};
+}
+const editTenant = (event) => {
+
+        const id = Number(event.target.parentNode.parentNode.dataset.id)
+        if (event.target.classList.contains('btn-edit-tenant')) {
+            console.log('edycja ' + id)
+            fName.value = event.target.parentNode.parentNode.firstChild.textContent
+            const dzieci =  event.target.parentNode.parentNode.childNodes
+
+            for (let i = 0; i < dzieci.length; i++)
+            {
+                console.log(dzieci[i].nodeName)
+            }
+    }
+}
 
 const createTenantTable = () => {
-
-    // console.log(tenants)
 
     for (const text of tenants.getTenantsList()) {
 
@@ -52,8 +74,10 @@ const createTenantTable = () => {
         const row = tbody.insertRow()
         let cell = row.insertCell()
         row.dataset.id = text.id // tworzy data-id w html w <tr> z kolejnym id
+        // row.dataset.index = text.id
 
         cell.textContent = text.id;
+
 
         cell = row.insertCell()
         cell.textContent = text.name
@@ -69,10 +93,22 @@ const createTenantTable = () => {
         cell = row.insertCell()
         cell.textContent = text.status
         cell = row.insertCell()
-        cell.innerHTML = ' <button class="btn-edit-tenant" >Edit</button><button class="btn-delete-tenant"  >Delete</button>'
+      // cell.innerHTML = ' <button class="btn-edit-tenant" >Edit</button><button class="btn-delete-tenant"  >Delete</button>'
+        const editButton = document.createElement("button");
+        editButton.classList.add("btn-edit-tenant")
+        editButton.textContent = 'Edit'
+        editButton.setAttribute("id", text.id);
+        cell.append(editButton)
+        const delButton = document.createElement("button");
+        delButton.classList.add("btn-delete-tenant")
+        delButton.textContent = 'Delete'
+        delButton.setAttribute("id", text.id);
+        cell.append(delButton)
 
 
-        tbody.addEventListener('click', removeTenant);
+        tbody.addEventListener('click', removeTenant)
+
+        tbody.addEventListener('click', editTenant)
 
 
     }
@@ -122,6 +158,7 @@ const findName = () => {
 
             cell.textContent = text.id;
 
+
             cell = row.insertCell()
             cell.textContent = text.name
 
@@ -136,25 +173,22 @@ const findName = () => {
             cell = row.insertCell()
             cell.textContent = text.status
             cell = row.insertCell()
-            cell.innerHTML = ' <button class="btn-edit-tenant" >Edit</button><button class="btn-delete-tenant"  >Delete</button>'
-            row.addEventListener('click', (event) => {
-                const id = Number(event.target.parentNode.dataset.id)
-                console.log("Numer id to " + id)
-                console.log(event.target.parentNode)
-                tenants.removeTenant(id)
-                row.remove(id)
+            // cell.innerHTML = ' <button class="btn-edit-tenant" >Edit</button><button class="btn-delete-tenant"  >Delete</button>'
+            const delButton = document.createElement("button");
+            delButton.classList.add("btn-delete-tenant")
+            delButton.textContent = 'Delete'
+            delButton.setAttribute("id", text.id);
+            cell.append(delButton)
 
-                showEmptyHeader()
-                console.log(tenants)
-                clearTenantTable()
-                createTenantTable()
-            })
         }
     } else {
         searchInfo.textContent = 'The tenant was not found in the database!'
     }
+    tbody.addEventListener('click', removeTenant);
 
 }
+
+
 searchName.addEventListener('keyup', findName)
 btnSearch.addEventListener('click', findName)
 

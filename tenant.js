@@ -45,10 +45,17 @@ class Tenants {
         this.tenants = []
     }
 
-    removeTenant(no) {
-        this.tenants.splice(no - 1, 1);
-    }
+    // removeTenant(no) {
+    //     this.tenants.splice(no - 1, 1);
+    // }
+    removeTenant(idTenant) {
+        this.tenants.forEach((tenant, index) => {
+            if (tenant.id === Number(idTenant)) {
+                this.tenants.splice(index, 1);
+            }
+        });
 
+    }
     // getTenantLength() {
     //     return this.tenants.length
     // }
@@ -62,7 +69,8 @@ class Tenants {
         return this.tenants
             .map((tenant, i) => {
                 return {
-                    id: i + 1,
+                    no: i + 1,
+                    id: tenant.id,
                     name: tenant.firstName,
                     surname: tenant.surname,
                     phone: tenant.phone,
