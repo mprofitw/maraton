@@ -5,33 +5,18 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7a67cf6307.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Properties</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <title>My ToDoList</title>
 </head>
 <body>
-<header></header>
-<nav>
-    <div class="main-menu">
-        <ul>
-            <div class="li-box">
-                <li><a class="home" href="index.html">home</a></li>
-            </div>
-            <div class="li-box">
-                <li><a class="properties" href="properties.html">Properties</a></li>
-            </div>
-            <div class="li-box">
-                <li><a class="tenants" href="tenants.html">Tenants</a></li>
-            </div>
-            <div class="li-box">
-                <li><a class="tenants" href="#">Expenses</a></li>
-            </div>
-        </ul>
-    </div>
-</nav>
+<input type="text" class="add-new-task"><button class="btn-add-new-task">Add new task</button>
+<div class="task-container"></div>
 
+<input type="text" class="search" placeholder="Input searching task">
+<input type="text" class="edit" placeholder="Edit"><button class="edit-btn">Save changes</button>
 
-<script src="properties.js"></script>
+<script src="Task.js"></script>
+<script src="ToDoList.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

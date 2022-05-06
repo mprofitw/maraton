@@ -1,0 +1,7 @@
+body{
+    font-size: 26px;
+}
+.done-task {
+    text-decoration: line-through;
+    color: #1c94ef;
+}
